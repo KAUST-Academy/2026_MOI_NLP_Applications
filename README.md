@@ -16,9 +16,9 @@ KAUST Academy
 | Session | Day | Topic | Slides | Labs |
 |---|---|---|---|---|
 | 1 | 1 | NLP Foundations: text, tokens and embeddings | 2 | Text Pre-Processing · Feature Engineering and N-grams · NLP Tasks and Tokenizers · Semantic Search |
-| 1 | 2 | coming soon | coming soon | coming soon |
-| 1 | 3 | coming soon | coming soon | coming soon |
-| 1 | 4 | coming soon | coming soon | coming soon |
+| 1 | 2 | Sequence Models and Transformers: RNNs, attention and model families | 2 | coming soon |
+| 1 | 3 | Large Language Models and Prompting | 2 | coming soon |
+| 1 | 4 | Running and Fine-Tuning LLMs: quantization, serving, LoRA and preference tuning | 2 | coming soon |
 | 2 | 5 | coming soon | coming soon | coming soon |
 | 2 | 6 | coming soon | coming soon | coming soon |
 | 2 | 7 | coming soon | coming soon | coming soon |

@@ -37,7 +37,10 @@ summary = """
 Two sessions of four days, each day built around lecture decks and hands-on
 labs. Day 1 goes from raw text to vectors: the NLP task map, preprocessing and
 what makes Arabic hard, counting models, subword tokenizers, and word and
-sentence embeddings.
+sentence embeddings. Day 2 goes from recurrent networks and attention to the
+transformer and its three model families. Day 3 covers how large language
+models are built and used, and prompt engineering measured on real tasks.
+Day 4 fits a model on the hardware you have, serves it, and fine-tunes it.
 """
 
 # -----------------------------------------------------------------------------
@@ -108,15 +111,23 @@ icon    = "ri-file-text-line"
 slug    = "day2"
 label   = "Day 2"
 session = "Session 1"
-title   = "Coming Soon"
-blurb   = "Slides and labs will be posted here before the day starts."
-icon    = "ri-calendar-event-line"
+title   = "Sequence Models and Transformers"
+blurb   = "From reading text in order to the transformer: recurrent networks, LSTM and GRU, encoder-decoder models and attention, then self-attention, the transformer block, the encoder, decoder and encoder-decoder families, and fine-tuning a pretrained model."
+icon    = "ri-node-tree"
 
   [[days.resources]]
-  name   = "Lectures"
-  detail = "Lecture decks for the day"
+  name   = "Part 1: Sequence Models and Attention"
+  detail = "Why word order and long-range context need a sequence model; recurrent networks worked by hand, input and output shapes, padding and packing, and a review classifier in PyTorch; backpropagation through time, vanishing and exploding gradients, and clipping; LSTM and GRU gates, compared on IMDb; encoder-decoder models, teacher forcing and the bottleneck; attention as a soft lookup with queries, keys and values, self-attention and cross-attention"
   kind   = "slides"
-  status = "todo"
+  file   = "Slides/Day_2/01_Sequence_Models_and_Attention.pdf"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Part 2: Transformers and Model Families"
+  detail = "Self-attention worked by hand and in PyTorch, and why scores are scaled; multi-head attention and the cost of long inputs; sinusoidal and learned position encodings; the transformer block: residual connections, layer normalization, the feed-forward network and parameter counts; causal masking and the decoder; pretraining the three families (BERT and AraBERT, GPT and Qwen, T5 and mBART) and which fits which job; fine-tuning on IMDb with the Trainer, pretrained versus from scratch"
+  kind   = "slides"
+  file   = "Slides/Day_2/02_Transformers_and_Model_Families.pdf"
+  status = "ready"
 
   [[days.resources]]
   name   = "Labs"
@@ -128,15 +139,23 @@ icon    = "ri-calendar-event-line"
 slug    = "day3"
 label   = "Day 3"
 session = "Session 1"
-title   = "Coming Soon"
-blurb   = "Slides and labs will be posted here before the day starts."
-icon    = "ri-calendar-event-line"
+title   = "Large Language Models and Prompting"
+blurb   = "How a large language model is built and used: scale, pretraining data, instruction tuning and alignment, chat templates, decoding, context windows and hallucination, and Arabic-centric LLMs; then prompt engineering measured on real tasks: instructions, examples, reasoning and structured output."
+icon    = "ri-chat-3-line"
 
   [[days.resources]]
-  name   = "Lectures"
-  detail = "Lecture decks for the day"
+  name   = "Part 1: How Large Language Models Are Built and Used"
+  detail = "From a pretrained decoder to an assistant: tasks written as text, examples in the prompt, base and chat models; scale, compute by hand and scaling laws; pretraining data from web crawl to clean tokens; instruction tuning and alignment with people's preferences; chat templates; greedy and beam search, temperature, top-k and top-p; the context window and what gets lost in a long input; hallucination; open and closed models, and Arabic-centric LLMs (Jais, ALLaM, Fanar)"
   kind   = "slides"
-  status = "todo"
+  file   = "Slides/Day_3/01_How_LLMs_Are_Built_and_Used.pdf"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Part 2: Prompt Engineering in Practice"
+  detail = "Testing a prompt like code on labelled data; the parts of a prompt, the system message, label definitions, delimiters and personas; zero-shot and few-shot, how many examples and which ones; how small wording changes swing results; chain of thought, self-consistency, thinking mode, self-checking and prompt chaining; valid JSON with Pydantic, retries and constrained decoding; prompts in production, and when prompting is not enough"
+  kind   = "slides"
+  file   = "Slides/Day_3/02_Prompt_Engineering.pdf"
+  status = "ready"
 
   [[days.resources]]
   name   = "Labs"
@@ -148,15 +167,23 @@ icon    = "ri-calendar-event-line"
 slug    = "day4"
 label   = "Day 4"
 session = "Session 1"
-title   = "Coming Soon"
-blurb   = "Slides and labs will be posted here before the day starts."
-icon    = "ri-calendar-event-line"
+title   = "Running and Fine-Tuning LLMs"
+blurb   = "Fitting a model on the hardware you have and serving it to many users: the KV cache, quantization, mixture of experts, Ollama and vLLM; then adapting it to your task with LoRA and QLoRA, supervised fine-tuning, preference tuning, GRPO and distillation."
+icon    = "ri-cpu-line"
 
   [[days.resources]]
-  name   = "Lectures"
-  detail = "Lecture decks for the day"
+  name   = "Part 1: Fit and Run a Model"
+  detail = "What fills GPU memory; prefill and decode; the KV cache computed by hand, and grouped-query attention; quantization by hand and measured, NF4 and the formats you will meet, and what fits on a T4; decoding speed and mixture of experts; prefix caching, streaming and speculative decoding; serving with GGUF files, Ollama and vLLM (continuous batching and PagedAttention); why training needs far more memory than running"
   kind   = "slides"
-  status = "todo"
+  file   = "Slides/Day_4/01_Fit_and_Run_a_Model.pdf"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Part 2: Fine-Tune It"
+  detail = "Prompt, retrieve or fine-tune, and what fine-tuning can and cannot teach; LoRA counted by hand and in code with PEFT; QLoRA on a T4, and Unsloth; supervised fine-tuning with TRL, the loss on the answer, measured before and after; preference tuning with RLHF and DPO; checkable rewards with GRPO, and reward hacking; labels, distillation and synthetic data from a larger model; which method for which goal, then merge, export and serve"
+  kind   = "slides"
+  file   = "Slides/Day_4/02_Fine_Tune_It.pdf"
+  status = "ready"
 
   [[days.resources]]
   name   = "Labs"

@@ -48,8 +48,8 @@ Day 4 fits a model on the hardware you have, serves it, and fine-tunes it.
 #
 # `session` groups the days on the home page: one heading and row per session.
 # Labs are listed in the order they are run. Day 1 Labs 2 and 3 and every
-# Day 2 lab download models and data at runtime and need internet. Day 1 Lab 2
-# and the Day 2 labs are set up for a GPU (Colab T4).
+# Day 2 and Day 3 lab download models and data at runtime and need internet.
+# Day 1 Lab 2 and the Day 2 and Day 3 labs are set up for a GPU (Colab T4).
 #
 # Colab URLs: https://colab.research.google.com/github/<repo>/blob/main/<path>
 # -----------------------------------------------------------------------------
@@ -185,10 +185,28 @@ icon    = "ri-chat-3-line"
   status = "ready"
 
   [[days.resources]]
-  name   = "Labs"
-  detail = "Hands-on notebooks for the day"
+  name   = "Lab 1: How Language Models Behave"
+  detail = "Send the same requests to GPT-2, Qwen3-0.6B-Base and its chat version, written plainly and as text the web contains; turn a pretrained model into an IMDb sentiment classifier with no training, zero-shot and with four examples; see what a wrong chat template does; compare greedy, beam search, temperature and top-p, and measure how often the text repeats itself; then count what the same Arabic text costs in five tokenizer families, including ALLaM and Jais. About 10 minutes on a Colab T4 GPU."
   kind   = "lab"
-  status = "todo"
+  file   = "Labs/Day_3/01_How_Language_Models_Behave.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_3/01_How_Language_Models_Behave.ipynb"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Lab 2: Prompting, Measured on Arabic Tweets"
+  detail = "Measure prompts with Qwen3.5-4B on Arabic tweets labelled by people for sentiment, sarcasm and dialect (ArSarcasm-v2): vague versus specific prompts and where the errors fall, zero-shot versus few-shot, JSON output checked with Pydantic and a retry, and a prompt injection measured against a baseline, with and without a defense. Extras compare chain of thought, thinking mode, voting and constrained choice. Needs a Colab T4 GPU."
+  kind   = "lab"
+  file   = "Labs/Day_3/02_Prompting_Measured_Arabic_Tweets.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_3/02_Prompting_Measured_Arabic_Tweets.ipynb"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Lab 3: Prompt Engineering, Measured"
+  detail = "Label voice-assistant requests from Amazon MASSIVE with one of 10 intents, in English and Arabic, using Qwen3-0.6B, and score every change to the prompt: label definitions, the same examples for every request or the most similar ones, six wordings of one instruction, a persona measured by reading grade, and a chain of prompts that finds facts hidden in the middle of a long text. About 10 minutes on a Colab T4 GPU."
+  kind   = "lab"
+  file   = "Labs/Day_3/03_Prompt_Engineering_Measured.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_3/03_Prompt_Engineering_Measured.ipynb"
+  status = "ready"
 
 [[days]]
 slug    = "day4"

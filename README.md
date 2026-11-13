@@ -17,15 +17,15 @@ KAUST Academy
 |---|---|---|---|---|
 | 1 | 1 | NLP Foundations: text, tokens and embeddings | 2 | Text Pre-Processing · Feature Engineering and N-grams · NLP Tasks and Tokenizers · Semantic Search |
 | 1 | 2 | Sequence Models and Transformers: RNNs, attention and model families | 2 | RNN, LSTM and GRU on Stack Overflow · Attention-Based Classifier · Encoder, Decoder or Both for QA · Transformer Fine-Tuning |
-| 1 | 3 | Large Language Models and Prompting | 2 | coming soon |
+| 1 | 3 | Large Language Models and Prompting | 2 | How Language Models Behave · Prompting, Measured on Arabic Tweets · Prompt Engineering, Measured |
 | 1 | 4 | Running and Fine-Tuning LLMs: quantization, serving, LoRA and preference tuning | 2 | coming soon |
 | 2 | 5 | coming soon | coming soon | coming soon |
 | 2 | 6 | coming soon | coming soon | coming soon |
 | 2 | 7 | coming soon | coming soon | coming soon |
 | 2 | 8 | coming soon | coming soon | coming soon |
 
-The labs are written for **Google Colab**; Day 1 Lab 2 and the Day 2 labs are
-set up for a free T4 GPU. They need internet: they download models, datasets
+The labs are written for **Google Colab**; Day 1 Lab 2 and the Day 2 and Day 3
+labs are set up for a free T4 GPU. They need internet: they download models, datasets
 and NLTK data at runtime.
 
 ---

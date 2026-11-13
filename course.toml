@@ -47,8 +47,9 @@ Day 4 fits a model on the hardware you have, serves it, and fine-tunes it.
 # Days
 #
 # `session` groups the days on the home page: one heading and row per session.
-# Labs are listed in the order they are run. Labs 2 and 3 download models and
-# data at runtime and need internet; Lab 2 needs a GPU (Colab T4).
+# Labs are listed in the order they are run. Day 1 Labs 2 and 3 and every
+# Day 2 lab download models and data at runtime and need internet. Day 1 Lab 2
+# and the Day 2 labs are set up for a GPU (Colab T4).
 #
 # Colab URLs: https://colab.research.google.com/github/<repo>/blob/main/<path>
 # -----------------------------------------------------------------------------
@@ -130,10 +131,36 @@ icon    = "ri-node-tree"
   status = "ready"
 
   [[days.resources]]
-  name   = "Labs"
-  detail = "Hands-on notebooks for the day"
+  name   = "Lab 1: Classifying Stack Overflow Posts with RNN, LSTM and GRU"
+  detail = "Sort Stack Overflow post titles into Spark, machine learning and security: clean and lemmatize the titles, turn them into sequences of GloVe vectors, pad each batch, then train a plain RNN, an LSTM and a GRU in PyTorch and compare them with classification reports and confusion matrices."
   kind   = "lab"
-  status = "todo"
+  file   = "Labs/Day_2/01_RNN_LSTM_GRU_Stack_Overflow_Classification.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_2/01_RNN_LSTM_GRU_Stack_Overflow_Classification.ipynb"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Lab 2: An Attention-Based Sentiment Classifier"
+  detail = "Build a vocabulary from IMDb movie reviews, read them with a GRU, put dot-product attention on top and train a positive or negative classifier; then colour each word by its attention weight, chart the words the model attends to most, and try sentences of your own."
+  kind   = "lab"
+  file   = "Labs/Day_2/02_Attention_Based_Classifier.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_2/02_Attention_Based_Classifier.ipynb"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Lab 3: Encoder, Decoder or Both for Question Answering"
+  detail = "Answer questions about a paragraph three ways: DistilBERT (encoder-only) points at a span, while FLAN-T5 (encoder-decoder) and Qwen3-0.6B (decoder-only) write the answer. Measure which tokens each model lets a token see, compare their inputs, test what happens when the answer is missing or past a 512-token window, and build a mini QA system."
+  kind   = "lab"
+  file   = "Labs/Day_2/03_Encoder_Decoder_and_Encoder_Decoder_QA.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_2/03_Encoder_Decoder_and_Encoder_Decoder_QA.ipynb"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Lab 4: Fine-Tuning a Transformer"
+  detail = "Fine-tune pretrained DistilBERT on IMDb reviews with the Hugging Face Trainer, using mixed precision and early stopping; plot the training curves, score all 25,000 test reviews on accuracy, precision, recall and F1, classify sentences of your own, and compare the result with the attention model from Lab 2. Needs a Colab T4 GPU."
+  kind   = "lab"
+  file   = "Labs/Day_2/04_Transformer_Fine_Tuning.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_2/04_Transformer_Fine_Tuning.ipynb"
+  status = "ready"
 
 [[days]]
 slug    = "day3"

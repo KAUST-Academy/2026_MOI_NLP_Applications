@@ -1,13 +1,15 @@
 # Lab environment for this course.
 #
-# The labs are written for Google Colab. Lab 2 needs a GPU (a free Colab T4);
-# the others run on CPU. Each notebook installs anything Colab lacks in its
-# first cells, so on Colab nothing here is required.
+# The labs are written for Google Colab. Day 1 Lab 2 and the Day 2 labs are set
+# up for a GPU (a free Colab T4); the other Day 1 labs run on CPU. Each notebook
+# installs anything Colab lacks in its first cells, so on Colab nothing here is
+# required.
 #
 # The labs also need internet: they download NLTK data, the spaCy English
-# model, Hugging Face models and datasets (OPUS-100), the GloVe vectors, and
-# the refinery guide for Lab 3 at runtime. A local wheelhouse alone does not
-# make them run offline.
+# model, Hugging Face models and datasets (OPUS-100, IMDb), the GloVe vectors,
+# the refinery guide for Day 1 Lab 3, and the Stack Overflow dataset from
+# Kaggle for Day 2 Lab 1 at runtime. A local wheelhouse alone does not make
+# them run offline.
 #
 # Versions are left unpinned, as in the notebooks' own install cells. See
 # OFFLINE.md for the `pip download` / `--no-index` install.
@@ -15,20 +17,23 @@
 numpy
 pandas
 matplotlib
+seaborn                       # Day 2 Labs 1, 4
 tqdm
 openpyxl                      # Day 1 Lab 3: reading the refinery guide
+kagglehub                     # Day 2 Lab 1: Stack Overflow dataset
 
 jupyterlab~=4.2
 ipywidgets~=8.1
 
-nltk                          # Day 1 Labs 1a, 1b, 3
+nltk                          # Day 1 Labs 1a, 1b, 3; Day 2 Lab 1
 spacy                         # Day 1 Lab 1a; also run: python -m spacy download en_core_web_sm
-scikit-learn                  # Day 1 Labs 1b, 3
+scikit-learn                  # Day 1 Labs 1b, 3; Day 2 Labs 1, 4
 
 torch
-transformers                  # Day 1 Labs 1a, 2
-datasets                      # Day 1 Lab 2
+transformers                  # Day 1 Labs 1a, 2; Day 2 Labs 3, 4
+accelerate                    # Day 2 Lab 4: the Hugging Face Trainer
+datasets                      # Day 1 Lab 2; Day 2 Labs 2, 4
 tokenizers                    # Day 1 Lab 2
 sacrebleu                     # Day 1 Lab 2: chrF
 sentence-transformers         # Day 1 Lab 3
-gensim                        # Day 1 Lab 3: GloVe vectors
+gensim                        # Day 1 Lab 3, Day 2 Lab 1: GloVe vectors

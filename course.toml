@@ -48,8 +48,9 @@ Day 4 fits a model on the hardware you have, serves it, and fine-tunes it.
 #
 # `session` groups the days on the home page: one heading and row per session.
 # Labs are listed in the order they are run. Day 1 Labs 2 and 3 and every
-# Day 2 and Day 3 lab download models and data at runtime and need internet.
-# Day 1 Lab 2 and the Day 2 and Day 3 labs are set up for a GPU (Colab T4).
+# lab from Day 2 to Day 4 download models and data at runtime and need
+# internet. Day 1 Lab 2 and the Day 2 to Day 4 labs are set up for a GPU
+# (Colab T4).
 #
 # Colab URLs: https://colab.research.google.com/github/<repo>/blob/main/<path>
 # -----------------------------------------------------------------------------
@@ -231,10 +232,34 @@ icon    = "ri-cpu-line"
   status = "ready"
 
   [[days.resources]]
-  name   = "Labs"
-  detail = "Hands-on notebooks for the day"
+  name   = "Lab 1"
+  detail = "Hands-on notebook for the day"
   kind   = "lab"
   status = "todo"
+
+  [[days.resources]]
+  name   = "Lab 2: Fine-Tuning With LoRA and QLoRA"
+  detail = "Teach a model to turn voice-assistant requests from Amazon MASSIVE, in English and Arabic, into JSON with an intent and its slots: score the frozen Qwen3-0.6B, count the parameters LoRA trains by hand and with PEFT, fine-tune with TRL's SFTTrainer with the loss on the answer only, and check what else the adapter changed; then train Qwen3-1.7B in 4 bits with QLoRA, compare GPU memory, and merge the adapter into the model. About 20 minutes on a Colab T4 GPU."
+  kind   = "lab"
+  file   = "Labs/Day_4/02_Fine_Tuning_With_LoRA_and_QLoRA.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_4/02_Fine_Tuning_With_LoRA_and_QLoRA.ipynb"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Lab 3: Fine-Tuning Llama 3.2 for Chat With Unsloth"
+  detail = "Fine-tune Llama 3.2 Instruct (3B or 1B) for multi-turn chat with Unsloth: add LoRA adapters, format FineTome-100k conversations with the Llama 3.1 chat template, train with TRL's SFTTrainer on the assistant's replies only, chat with the result as it streams token by token, and save the adapter; then fine-tune it on a small dataset of your own. Needs a Colab T4 GPU."
+  kind   = "lab"
+  file   = "Labs/Day_4/03_Unsloth_Llama3_2_Conversational.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_4/03_Unsloth_Llama3_2_Conversational.ipynb"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Lab 4: Preference Tuning With DPO"
+  detail = "Teach Qwen3-0.6B to answer briefly without being asked: look at UltraFeedback preference pairs, build your own pairs from the model's answers with and without an instruction to be concise, train a LoRA adapter with TRL's DPOTrainer and follow its logged rewards, measure answer length and correctness again, look inside DPO at the log-probabilities of one pair, and compare with plain SFT on the chosen answers. About 10 minutes on a Colab T4 GPU."
+  kind   = "lab"
+  file   = "Labs/Day_4/04_Preference_Tuning_With_DPO.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_4/04_Preference_Tuning_With_DPO.ipynb"
+  status = "ready"
 
 [[days]]
 slug    = "day5"

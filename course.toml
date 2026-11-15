@@ -341,6 +341,34 @@ icon    = "ri-calendar-event-line"
 # -----------------------------------------------------------------------------
 
 [[extra]]
+name   = "Annotated Slides, Day 1 Part 1: NLP Tasks, Text and Counting Models"
+detail = "The Day 1 Part 1 deck with the handwritten notes and whiteboard pages from the lecture"
+kind   = "slides"
+file   = "Extra/Annotated_Slides/Day_1/01_NLP_Tasks_and_Text_Processing.pdf"
+status = "ready"
+
+[[extra]]
+name   = "Annotated Slides, Day 1 Part 2: Tokenization and Embeddings"
+detail = "The Day 1 Part 2 deck with the handwritten notes and whiteboard pages from the lecture"
+kind   = "slides"
+file   = "Extra/Annotated_Slides/Day_1/02_Tokenization_and_Embeddings.pdf"
+status = "ready"
+
+[[extra]]
+name   = "Annotated Slides, Day 2 Part 1: Sequence Models and Attention"
+detail = "The Day 2 Part 1 deck with the handwritten notes and whiteboard pages from the lecture"
+kind   = "slides"
+file   = "Extra/Annotated_Slides/Day_2/01_Sequence_Models_and_Attention.pdf"
+status = "ready"
+
+[[extra]]
+name   = "Annotated Slides, Day 3 Part 1: How Large Language Models Are Built and Used"
+detail = "The Day 3 Part 1 deck with the handwritten notes and whiteboard pages from the lecture"
+kind   = "slides"
+file   = "Extra/Annotated_Slides/Day_3/01_How_LLMs_Are_Built_and_Used.pdf"
+status = "ready"
+
+[[extra]]
 name   = "Additional References"
 detail = "Papers, tools and further reading shared during the course"
 kind   = "reference"

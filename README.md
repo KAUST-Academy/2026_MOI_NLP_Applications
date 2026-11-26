@@ -19,12 +19,12 @@ KAUST Academy
 | 1 | 2 | Sequence Models and Transformers: RNNs, attention and model families | 2 | RNN, LSTM and GRU on Stack Overflow · Attention-Based Classifier · Encoder, Decoder or Both for QA · Transformer Fine-Tuning |
 | 1 | 3 | Large Language Models and Prompting | 2 | How Language Models Behave · Prompting, Measured on Arabic Tweets · Prompt Engineering, Measured |
 | 1 | 4 | Running and Fine-Tuning LLMs: quantization, serving, LoRA and preference tuning | 2 | Fine-Tuning With LoRA and QLoRA · Fine-Tuning Llama 3.2 With Unsloth · Preference Tuning With DPO |
-| 2 | 5 | coming soon | coming soon | coming soon |
-| 2 | 6 | coming soon | coming soon | coming soon |
+| 2 | 5 | Retrieval-Augmented Generation: retrieval, reranking, knowledge graphs and evaluation | 2 | RAG on a Company Handbook · Evaluate Your RAG · Reranking and Cited Answers · Knowledge Graph RAG |
+| 2 | 6 | AI Agents: tools, MCP, graphs, memory and evaluation | 2 | Build an Agent From Scratch · Agentic RAG · Tool Use and Its Evaluation · Research Agent (optional) |
 | 2 | 7 | coming soon | coming soon | coming soon |
 | 2 | 8 | coming soon | coming soon | coming soon |
 
-The labs are written for **Google Colab**; Day 1 Lab 2 and the Day 2 to Day 4
+The labs are written for **Google Colab**; Day 1 Lab 2 and the Day 2 to Day 6
 labs are set up for a free T4 GPU. They need internet: they download models, datasets
 and NLTK data at runtime.
 

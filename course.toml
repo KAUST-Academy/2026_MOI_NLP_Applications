@@ -41,6 +41,8 @@ sentence embeddings. Day 2 goes from recurrent networks and attention to the
 transformer and its three model families. Day 3 covers how large language
 models are built and used, and prompt engineering measured on real tasks.
 Day 4 fits a model on the hardware you have, serves it, and fine-tunes it.
+Day 5 answers questions from your own documents with retrieval-augmented
+generation, and Day 6 builds agents that use tools, and evaluates them.
 """
 
 # -----------------------------------------------------------------------------
@@ -48,8 +50,8 @@ Day 4 fits a model on the hardware you have, serves it, and fine-tunes it.
 #
 # `session` groups the days on the home page: one heading and row per session.
 # Labs are listed in the order they are run. Day 1 Labs 2 and 3 and every
-# lab from Day 2 to Day 4 download models and data at runtime and need
-# internet. Day 1 Lab 2 and the Day 2 to Day 4 labs are set up for a GPU
+# lab from Day 2 to Day 6 download models and data at runtime and need
+# internet. Day 1 Lab 2 and the Day 2 to Day 6 labs are set up for a GPU
 # (Colab T4).
 #
 # Colab URLs: https://colab.research.google.com/github/<repo>/blob/main/<path>
@@ -259,41 +261,109 @@ icon    = "ri-cpu-line"
 slug    = "day5"
 label   = "Day 5"
 session = "Session 2"
-title   = "Coming Soon"
-blurb   = "Slides and labs will be posted here before the day starts."
-icon    = "ri-calendar-event-line"
+title   = "Retrieval-Augmented Generation"
+blurb   = "Answering from your own documents: parsing and chunking, embeddings and vector indexes, keyword, dense and hybrid search, reranking and query rewriting, and grounded answers with citations; then knowledge graphs, context engineering, RAG in production, and how to evaluate retrieval and answers."
+icon    = "ri-file-search-line"
 
   [[days.resources]]
-  name   = "Lectures"
-  detail = "Lecture decks for the day"
+  name   = "Part 1: Retrieval-Augmented Generation"
+  detail = "Why a model needs your documents, and RAG in real applications; parsing and chunking, with hit@k and MRR to measure chunk size, overlap, semantic and parent-child chunks; embeddings and vector indexes, exact and approximate search; BM25 by hand, dense and hybrid retrieval with reciprocal rank fusion, Arabic questions over English pages, and metadata filters; reranking with a cross-encoder, rewriting the question, multi-query, routing and HyDE; the grounded prompt, citations, refusals, and the whole pipeline in code"
   kind   = "slides"
-  status = "todo"
+  file   = "Slides/Day_5/01_Retrieval_Augmented_Generation.pdf"
+  status = "ready"
 
   [[days.resources]]
-  name   = "Labs"
-  detail = "Hands-on notebooks for the day"
+  name   = "Part 2: Graphs, Context and Evaluation"
+  detail = "Questions that one top-k search cannot answer; knowledge graphs: triples, building a graph with an LLM, text-to-query and GraphRAG; context engineering: what goes in the window, how many passages and where, long context or RAG, and follow-up questions; RAG in production: a fresh index, permissions, latency, output formats and guardrails; evaluating retrieval and answers separately: a test set, recall, precision and faithfulness by hand, an LLM judge checked against hand labels, and error bars"
+  kind   = "slides"
+  file   = "Slides/Day_5/02_Graphs_Context_and_Evaluation.pdf"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Lab 1: RAG on a Company Handbook"
+  detail = "Build an assistant that answers from 38 pages of GitLab's public handbook, cites its sources, and says it does not know when the pages do not cover a question: load the pages with their metadata, compare four chunking strategies in ChromaDB, see what metadata filters change, and generate grounded answers with Qwen3.5-4B. The exercises are prompts: search with an imagined answer, take a filter from the question, and handle follow-up questions. Needs a Colab T4 GPU."
   kind   = "lab"
-  status = "todo"
+  file   = "Labs/Day_5/01_RAG_on_a_Company_Handbook.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_5/01_RAG_on_a_Company_Handbook.ipynb"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Lab 2: Evaluate Your RAG"
+  detail = "Turn a spot check of the handbook assistant into an evaluation: build a test set from hand-written, LLM-drafted and unanswerable questions; measure BM25, dense and hybrid retrieval with hit@k and MRR; check answers for correctness, faithfulness and refusals with an LLM judge, then check the judge against your own labels; sort failures into retrieval or generation, and put error bars on the numbers. Needs a Colab T4 GPU."
+  kind   = "lab"
+  file   = "Labs/Day_5/02_Evaluate_Your_RAG.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_5/02_Evaluate_Your_RAG.ipynb"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Lab 3: Reranking and Cited Answers"
+  detail = "Build a complete RAG system over the Hugging Face documentation: token-aware chunking and duplicate removal, a FAISS index of MiniLM embeddings, the top 30 passages from dense retrieval reranked to 5 with a cross-encoder, and an answer from Qwen2.5-3B-Instruct that cites its sources. Needs a Colab T4 GPU."
+  kind   = "lab"
+  file   = "Labs/Day_5/03_Reranking_and_Cited_Answers.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_5/03_Reranking_and_Cited_Answers.ipynb"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Lab 4: Knowledge Graph RAG"
+  detail = "Answer questions that link or collect facts from several benefits pages of the handbook: see which ones a top-5 chunk search misses, extract (country, relation, value) triples with Qwen3.5-4B and a fixed list of relations, walk the graph for a two-step question, let the model write SQL over the facts, and compare chunks, facts and SQL on the same ten questions. About 25 minutes on a Colab T4 GPU."
+  kind   = "lab"
+  file   = "Labs/Day_5/04_Knowledge_Graph_RAG.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_5/04_Knowledge_Graph_RAG.ipynb"
+  status = "ready"
 
 [[days]]
 slug    = "day6"
 label   = "Day 6"
 session = "Session 2"
-title   = "Coming Soon"
-blurb   = "Slides and labs will be posted here before the day starts."
-icon    = "ri-calendar-event-line"
+title   = "AI Agents"
+blurb   = "From a chatbot to an agent: tools, the agent loop, the Model Context Protocol and reasoning patterns such as ReAct; then building agents as graphs, with checkpoints, human approval, memory, defenses against prompt injection, agentic RAG, and evaluation."
+icon    = "ri-robot-line"
 
   [[days.resources]]
-  name   = "Lectures"
-  detail = "Lecture decks for the day"
+  name   = "Part 1: What Makes an Agent"
+  detail = "Workflows and agents, the agent loop, and when not to build an agent; tools: what the model reads and writes, calls through an API, choosing the right tool, errors the model can use, and designing tools; the Model Context Protocol: host, client and server, in code, and trust; reasoning patterns: ReAct, plan then execute, CodeAct and Reflexion, measured; stopping rules, budgets and state; choosing the model behind the agent, and fine-tuning it for tool calls"
   kind   = "slides"
-  status = "todo"
+  file   = "Slides/Day_6/01_What_Makes_an_Agent.pdf"
+  status = "ready"
 
   [[days.resources]]
-  name   = "Labs"
-  detail = "Hands-on notebooks for the day"
+  name   = "Part 2: Building Agents"
+  detail = "The agent loop as a graph: state, reducers, nodes, edges and streaming; checkpoints, and pausing for a person's approval; indirect prompt injection through tool results, and guarding the graph; short- and long-term memory, measured; agentic RAG against the fixed pipeline, self-correcting retrieval, and a query tool over a table; evaluating agents: a test set of tasks, error analysis from traces, pass@k and pass^k, benchmarks and tracing"
+  kind   = "slides"
+  file   = "Slides/Day_6/02_Building_Agents.pdf"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Lab 1: Build an Agent From Scratch"
+  detail = "With no framework: give Qwen3.5-4B tools over the GitLab handbook and a mock HR system, make one tool call by hand, then write the agent loop with stopping rules; measure how tool descriptions change its choices, serve the tools through MCP, put a human approval gate in front of the one irreversible tool, and attack your own agent with an instruction hidden in an email. Needs a Colab T4 GPU."
   kind   = "lab"
-  status = "todo"
+  file   = "Labs/Day_6/01_Build_an_Agent_From_Scratch.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_6/01_Build_an_Agent_From_Scratch.ipynb"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Lab 2: Agentic RAG"
+  detail = "Rebuild the reranked RAG pipeline of Day 5 Lab 3, then expose its sources as tools and add a router agent that decides which documentation to search; trace each decision from routing to the grounded answer, and compare the agent with the fixed pipeline. Needs a Colab T4 GPU."
+  kind   = "lab"
+  file   = "Labs/Day_6/02_Agentic_RAG.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_6/02_Agentic_RAG.ipynb"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Lab 3: Tool Use and Its Evaluation"
+  detail = "Serve four tools from a real MCP server and run a tool-calling agent over them with Qwen2.5-1.5B-Instruct; score the model on a slice of the Berkeley Function-Calling Leaderboard for valid calls, the right tool, the right arguments, and declining when no tool fits; fine-tune it with LoRA and TRL on Hermes function-calling data and refusals built from it, then score it again and measure reliability with pass^k. About 40 minutes on a Colab T4 GPU."
+  kind   = "lab"
+  file   = "Labs/Day_6/03_Tool_Use_and_Its_Evaluation.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_6/03_Tool_Use_and_Its_Evaluation.ipynb"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Lab 4: Research Agent (Optional)"
+  detail = "Build a deep-research agent over live arXiv in six small functions: the model plans the searches, picks the papers worth reading, reads and summarizes each one, decides whether it has learned enough or must search again, and writes a briefing whose citations are checked. Try it on your own papers or reports, and rebuild it as a LangGraph graph in the extras. Needs a Colab T4 GPU."
+  kind   = "lab"
+  file   = "Labs/Day_6/04_Research_Agent_Optional.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_6/04_Research_Agent_Optional.ipynb"
+  status = "ready"
 
 [[days]]
 slug    = "day7"

@@ -303,14 +303,6 @@ icon    = "ri-file-search-line"
   colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_5/03_Reranking_and_Cited_Answers.ipynb"
   status = "ready"
 
-  [[days.resources]]
-  name   = "Lab 4: Knowledge Graph RAG"
-  detail = "Answer questions that link or collect facts from several benefits pages of the handbook: see which ones a top-5 chunk search misses, extract (country, relation, value) triples with Qwen3.5-4B and a fixed list of relations, walk the graph for a two-step question, let the model write SQL over the facts, and compare chunks, facts and SQL on the same ten questions. About 25 minutes on a Colab T4 GPU."
-  kind   = "lab"
-  file   = "Labs/Day_5/04_Knowledge_Graph_RAG.ipynb"
-  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_5/04_Knowledge_Graph_RAG.ipynb"
-  status = "ready"
-
 [[days]]
 slug    = "day6"
 label   = "Day 6"

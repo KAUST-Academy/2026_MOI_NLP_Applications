@@ -334,27 +334,19 @@ icon    = "ri-robot-line"
   status = "ready"
 
   [[days.resources]]
-  name   = "Lab 2: Agentic RAG"
-  detail = "Rebuild the reranked RAG pipeline of Day 5 Lab 3, then expose its sources as tools and add a router agent that decides which documentation to search; trace each decision from routing to the grounded answer, and compare the agent with the fixed pipeline. Needs a Colab T4 GPU."
-  kind   = "lab"
-  file   = "Labs/Day_6/02_Agentic_RAG.ipynb"
-  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_6/02_Agentic_RAG.ipynb"
-  status = "ready"
-
-  [[days.resources]]
-  name   = "Lab 3: Tool Use and Its Evaluation"
+  name   = "Lab 2: Tool Use and Its Evaluation"
   detail = "Serve four tools from a real MCP server and run a tool-calling agent over them with Qwen2.5-1.5B-Instruct; score the model on a slice of the Berkeley Function-Calling Leaderboard for valid calls, the right tool, the right arguments, and declining when no tool fits; fine-tune it with LoRA and TRL on Hermes function-calling data and refusals built from it, then score it again and measure reliability with pass^k. About 40 minutes on a Colab T4 GPU."
   kind   = "lab"
-  file   = "Labs/Day_6/03_Tool_Use_and_Its_Evaluation.ipynb"
-  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_6/03_Tool_Use_and_Its_Evaluation.ipynb"
+  file   = "Labs/Day_6/02_Tool_Use_and_Its_Evaluation.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_6/02_Tool_Use_and_Its_Evaluation.ipynb"
   status = "ready"
 
   [[days.resources]]
-  name   = "Lab 4: Research Agent (Optional)"
+  name   = "Lab 3: Research Agent (Optional)"
   detail = "Build a deep-research agent over live arXiv in six small functions: the model plans the searches, picks the papers worth reading, reads and summarizes each one, decides whether it has learned enough or must search again, and writes a briefing whose citations are checked. Try it on your own papers or reports, and rebuild it as a LangGraph graph in the extras. Needs a Colab T4 GPU."
   kind   = "lab"
-  file   = "Labs/Day_6/04_Research_Agent_Optional.ipynb"
-  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_6/04_Research_Agent_Optional.ipynb"
+  file   = "Labs/Day_6/03_Research_Agent_Optional.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_6/03_Research_Agent_Optional.ipynb"
   status = "ready"
 
 [[days]]
@@ -428,6 +420,13 @@ name   = "Annotated Slides, Day 3 Part 1: How Large Language Models Are Built an
 detail = "The Day 3 Part 1 deck with the handwritten notes and whiteboard pages from the lecture"
 kind   = "slides"
 file   = "Extra/Annotated_Slides/Day_3/01_How_LLMs_Are_Built_and_Used.pdf"
+status = "ready"
+
+[[extra]]
+name   = "Annotated Slides, Day 5 Part 1: Retrieval-Augmented Generation"
+detail = "The Day 5 Part 1 deck with the handwritten notes and whiteboard pages from the lecture"
+kind   = "slides"
+file   = "Extra/Annotated_Slides/Day_5/01_Retrieval_Augmented_Generation.pdf"
 status = "ready"
 
 [[extra]]

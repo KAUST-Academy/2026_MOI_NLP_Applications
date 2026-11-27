@@ -43,6 +43,8 @@ models are built and used, and prompt engineering measured on real tasks.
 Day 4 fits a model on the hardware you have, serves it, and fine-tunes it.
 Day 5 answers questions from your own documents with retrieval-augmented
 generation, and Day 6 builds agents that use tools, and evaluates them.
+Day 7 asks when a team of agents does better than one, and what the harness
+around a model needs to make an agent reliable.
 """
 
 # -----------------------------------------------------------------------------
@@ -353,15 +355,23 @@ icon    = "ri-robot-line"
 slug    = "day7"
 label   = "Day 7"
 session = "Session 2"
-title   = "Coming Soon"
-blurb   = "Slides and labs will be posted here before the day starts."
-icon    = "ri-calendar-event-line"
+title   = "Multi-Agent Systems and Harnesses"
+blurb   = "When a team of agents beats one agent, and what it costs: routers, supervisors, fan-out, reviewers and debate, measured, with hand-overs, protocols and how teams fail; then the harness around the model: managing context, long tasks, permissions, hooks, sandboxes and budgets, real harnesses such as Claude Code and Codex, and testing agents like software."
+icon    = "ri-team-line"
 
   [[days.resources]]
-  name   = "Lectures"
-  detail = "Lecture decks for the day"
+  name   = "Part 1: Multi-Agent Systems"
+  detail = "What one agent got wrong; single, independent, centralised, decentralised and hybrid architectures, a published case, and what coordination costs; our team against our agent, measured; patterns: a router, a supervisor with specialists, hand-overs, parallel fan-out, a reviewer, and voting, a critic and debate, each measured; hierarchies, deep research, and the HR assistant as a team; shared state, the hand-over message, MCP and A2A; failures: the MAST taxonomy, finding the culprit, errors that spread, loops and budgets, testing a team, and a guide to when not to build one"
   kind   = "slides"
-  status = "todo"
+  file   = "Slides/Day_7/01_Multi_Agent_Systems.pdf"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Part 2: Agent Harnesses and Reliability"
+  detail = "Same model, different harness: what a harness adds, and the assumption each part encodes; context: clearing old tool results, compaction, notes and sub-agents, measured on long requests, and too many tools; long tasks: a to-do list kept in code, progress files and resuming; control: permissions, hooks, sandboxes and budgets, and approvals that scale; real harnesses: Claude Code, OpenAI Codex, Deep Agents and Hermes Agent, the Claude Agent SDK loop, instruction files and skills; testing an agent like software: judges with controls, traces, cost and reliability, regression tests, and a harness checklist"
+  kind   = "slides"
+  file   = "Slides/Day_7/02_Agent_Harnesses.pdf"
+  status = "ready"
 
   [[days.resources]]
   name   = "Labs"

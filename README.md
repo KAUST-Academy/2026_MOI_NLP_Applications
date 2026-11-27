@@ -21,10 +21,10 @@ KAUST Academy
 | 1 | 4 | Running and Fine-Tuning LLMs: quantization, serving, LoRA and preference tuning | 2 | Fine-Tuning With LoRA and QLoRA · Fine-Tuning Llama 3.2 With Unsloth · Preference Tuning With DPO |
 | 2 | 5 | Retrieval-Augmented Generation: retrieval, reranking, knowledge graphs and evaluation | 2 | RAG on a Company Handbook · Evaluate Your RAG · Reranking and Cited Answers |
 | 2 | 6 | AI Agents: tools, MCP, graphs, memory and evaluation | 2 | Build an Agent From Scratch · Tool Use and Its Evaluation · Research Agent (optional) |
-| 2 | 7 | Multi-Agent Systems and Harnesses: agent teams, context, control and testing | 2 | coming soon |
+| 2 | 7 | Multi-Agent Systems and Harnesses: agent teams, context, control and testing | 2 | A Team of Agents · Testing Agents · Build Your Own Hermes |
 | 2 | 8 | coming soon | coming soon | coming soon |
 
-The labs are written for **Google Colab**; Day 1 Lab 2 and the Day 2 to Day 6
+The labs are written for **Google Colab**; Day 1 Lab 2 and the Day 2 to Day 7
 labs are set up for a free T4 GPU. They need internet: they download models, datasets
 and NLTK data at runtime.
 

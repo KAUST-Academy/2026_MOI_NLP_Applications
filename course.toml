@@ -52,8 +52,8 @@ around a model needs to make an agent reliable.
 #
 # `session` groups the days on the home page: one heading and row per session.
 # Labs are listed in the order they are run. Day 1 Labs 2 and 3 and every
-# lab from Day 2 to Day 6 download models and data at runtime and need
-# internet. Day 1 Lab 2 and the Day 2 to Day 6 labs are set up for a GPU
+# lab from Day 2 to Day 7 download models and data at runtime and need
+# internet. Day 1 Lab 2 and the Day 2 to Day 7 labs are set up for a GPU
 # (Colab T4).
 #
 # Colab URLs: https://colab.research.google.com/github/<repo>/blob/main/<path>
@@ -374,10 +374,28 @@ icon    = "ri-team-line"
   status = "ready"
 
   [[days.resources]]
-  name   = "Labs"
-  detail = "Hands-on notebooks for the day"
+  name   = "Lab 1: A Team of Agents"
+  detail = "Give the job one agent did on Day 6 to a team: a triage agent that routes each customer message, a policy specialist that searches documents in ChromaDB and an account specialist that queries SQLite, a writer, a reviewer who is not the writer, and a supervisor that sets the order, enforces a budget and hands a case to a person; then compare the team with one agent on the same cases, and rebuild it as a LangGraph graph. The exercises are prompts: the triage prompt, the writer's rules, a reviewer for tone only, and a message of your own. Needs a Colab T4 GPU."
   kind   = "lab"
-  status = "todo"
+  file   = "Labs/Day_7/01_Agent_Team.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_7/01_Agent_Team.ipynb"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Lab 2: Testing Agents"
+  detail = "Test a tool-using agent for a fictional company: a golden trajectory and its score, each tool on its own, an LLM judge and adversarial inputs; watch it through structured logs, a trace waterfall and alerts; put a critic between the answer and the user, and test the routing and hand-overs of a router with specialist workers. The tests the lab starts with all pass while the system still gives a wrong answer: you write the test that catches it and fix the prompt behind it. The exercises are prompts and test data. Needs a Colab T4 GPU."
+  kind   = "lab"
+  file   = "Labs/Day_7/02_Testing_Agents.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_7/02_Testing_Agents.ipynb"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Lab 3: Build Your Own Hermes"
+  detail = "Build a small version of the open-source Hermes Agent from scratch: an agent loop with tools, a chat gateway, a long-term memory provider, skills the agent writes for itself, a scheduler with a heartbeat, and an orchestrator with workers; then wire them into one assistant and chat with it in a Gradio web interface, with a real Telegram bot in the extras. The exercises are prompts. Needs a Colab T4 GPU."
+  kind   = "lab"
+  file   = "Labs/Day_7/03_Build_Your_Own_Hermes.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_MOI_NLP_Applications/blob/main/Labs/Day_7/03_Build_Your_Own_Hermes.ipynb"
+  status = "ready"
 
 [[days]]
 slug    = "day8"
